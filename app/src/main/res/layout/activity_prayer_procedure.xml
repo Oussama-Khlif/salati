@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:background="@drawable/bg"
+    android:padding="20dp">
+
+    <!-- Back Button -->
+
+    <!-- Prayer Step Image -->
+    <ImageButton
+        android:id="@+id/back_button_prayer_procedure"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="رجوع"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/step_image"
+        android:layout_width="200dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="وضعية الصلاة"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button_prayer_procedure"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/rakaa_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/dark_brown"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/ya_modernpro_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/step_image"
+        tools:text="الركعة: 1 من 2" />
+
+
+    <!-- Instruction Text -->
+    <TextView
+        android:id="@+id/instruction_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_instruction_bg"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rakaa_text"
+        tools:text="القيام" />
+
+    <!-- Surah Al-Fatiha Text -->
+    <TextView
+        android:id="@+id/surah_fatiha_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_surah_bg"
+        android:fontFamily="sans-serif-medium"
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/dark_brown"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/instruction_text"
+        tools:text="
+        ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ
+        ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+        مَٰلِكِ يَوْمِ ٱلدِّينِ
+        إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
+        ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ
+        صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ" />
+
+
+    <ScrollView
+        android:id="@+id/surah_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:fadeScrollbars="false"
+        android:scrollbarStyle="outsideOverlay"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/button_container"
+        app:layout_constraintTop_toBottomOf="@id/surah_fatiha_text">
+
+    <TextView
+        android:id="@+id/surah_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_surah_bg"
+        android:fontFamily="sans-serif-light"
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/dark_brown"
+        android:textSize="18sp"
+        tools:text="اقْرَأ: سورة الإخلاص" />
+</ScrollView>
+
+
+
+    <!-- Button Container -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Previous Step Button -->
+        <Button
+            android:id="@+id/previous_step_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/light_brown"
+            android:padding="16dp"
+            android:text="رجوع"
+            android:textSize="18sp"
+            android:fontFamily="@font/ya_modernpro_bold" />
+
+        <!-- Next Rak'ah Button -->
+        <Button
+            android:id="@+id/next_rakaa_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5C955E"
+            android:padding="16dp"
+            android:text="التالي"
+            android:textSize="18sp"
+            android:fontFamily="@font/ya_modernpro_bold" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

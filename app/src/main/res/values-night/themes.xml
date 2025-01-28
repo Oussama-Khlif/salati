@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Base.Theme.Salati" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Set the custom font globally -->
+        <item name="android:fontFamily">@font/ya_modernpro_bold</item>
+
+        <!-- Allow the background to extend into the status bar area -->
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- Allow content to extend into the top area (status bar) -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.Salati" parent="Base.Theme.Salati" />
+</resources>
